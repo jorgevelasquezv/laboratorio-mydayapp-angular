@@ -1,0 +1,21 @@
+<div class="view">
+  <input
+    [id]="task.id"
+    class="toggle"
+    type="checkbox"
+    [checked]="task.completed"
+    (click)="handlerCompleted()"
+    onkeyup="handlerCompleted()"
+  />
+  <label [for]="task.id" (dblclick)="handlerEditingMode()">{{
+    task.title
+  }}</label>
+  <button class="destroy" (click)="handlerRemoveTask()"></button>
+</div>
+<input
+  class="edit"
+  value="{{ task.title }}"
+  (keyup.enter)="handlerUpdateTask($event)"
+  (keyup.escape)="handlerCancelEditing()"
+  appFocus
+/>

@@ -1,0 +1,11 @@
+<section class="main">
+  <ul class="todo-list">
+    <li
+      *ngFor="let task of tasks"
+      [class.completed]="task.completed"
+      [class.editing]="task.editing"
+    >
+      <app-task [task]="task"></app-task>
+    </li>
+  </ul>
+</section>

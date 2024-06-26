@@ -1,0 +1,19 @@
+<section class="todoapp">
+  <header class="header">
+    <div class="container">
+      <h1>My Day</h1>
+      <p>All my tasks in one place</p>
+      <input
+        class="new-todo"
+        placeholder="Type new todo"
+        autofocus
+        type="text"
+        (keyup.enter)="addTask($event)"
+      />
+    </div>
+  </header>
+  <div class="container todoapp-wrapper">
+    <app-tasks-container *ngIf="tasks.length > 0"></app-tasks-container>
+    <app-footer *ngIf="tasks.length > 0"></app-footer>
+  </div>
+</section>
